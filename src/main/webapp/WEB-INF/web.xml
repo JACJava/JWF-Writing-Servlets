@@ -5,14 +5,30 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
            version="3.0">
 
+    <context-param>
+        <param-name>ProductName</param-name>
+        <param-value>Servlet Context Product Name</param-value>
+    </context-param>
+
     <servlet>
-        <servlet-name>Simple</servlet-name>
+        <servlet-name>SimpleServlet</servlet-name>
         <servlet-class>com.mantiso.SimpleServlet</servlet-class>
+        <init-param>
+            <param-name>ProductName</param-name>
+            <param-value>Yet Another Product Name</param-value>
+        </init-param>
     </servlet>
 
+    <servlet-mapping>
+        <servlet-name>SimpleServlet</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
+    <!--
     <servlet-mapping>
         <servlet-name>Simple</servlet-name>
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
+    -->
 
 </web-app>
